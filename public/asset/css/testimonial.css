@@ -1,0 +1,118 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #fff7fa;
+      color: #444;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: #fff;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav .logo { color: #F37199; font-weight: bold; font-size: 1.5rem; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a {
+      text-decoration: none; color: #F37199; font-weight: 500;
+    }
+    nav ul li a:hover { text-decoration: underline; }
+    nav .btn {
+      background: #F37199; color: white;
+      padding: 8px 15px; border-radius: 5px; text-decoration: none;
+    }
+    nav .btn:hover { background-color: #AC1754; }
+
+    main {
+      padding: 140px 20px 80px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #F37199;
+      margin-bottom: 10px;
+      font-size: 2.8rem;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #AC1754;
+      margin-bottom: 50px;
+      font-size: 1.2rem;
+    }
+
+    .swiper {
+      width: 100%;
+      padding-bottom: 30px;
+    }
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .swiper-slide {
+      background: linear-gradient(to bottom right, #fff0f5, #ffe3ed);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(243, 113, 153, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+      width: 250px;
+    }
+    .swiper-slide:hover {
+      transform: translateY(-5px);
+    }
+    .swiper-slide img {
+      width: 150px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .swiper-slide p {
+      font-style: italic;
+      color: #555;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .swiper-slide h4 {
+      color: #F37199;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .instagram {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .instagram a {
+      color: #F37199;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    .instagram a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 30px 10px;
+      background-color: #f5f5f5;
+      color: #999;
+      margin-top: 60px;
+    }
+
+    .swiper-container-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      transition: transform 0.3s ease;
+    }
