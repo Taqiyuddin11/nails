@@ -116,3 +116,46 @@
       gap: 30px;
       transition: transform 0.3s ease;
     }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid #c86fc9;
+      padding: 25px 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      z-index: 9999;
+      display: none;
+      text-align: center;
+      border-radius: 12px;
+    }
+    .popup button {
+      margin-top: 12px;
+      padding: 8px 20px;
+      background-color: #c86fc9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form textarea, form input {
+      width: 100%;
+      max-width: 600px;
+      margin: 10px auto;
+      display: block;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+    form button {
+      display: block;
+      margin: 0 auto;
+      background-color: #c86fc9;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+    }

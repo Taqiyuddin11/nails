@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
     <div class="logo">By Cosmic Nails</div>
     <ul>
@@ -24,91 +25,67 @@
     <a href="https://api.whatsapp.com/send/?phone=6281234067022" class="btn">Book Now</a>
   </nav>
 
+  <!-- Main Content -->
   <main>
     <h1 data-aos="fade-up">Happy Clients</h1>
     <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Stories from those who’ve been pampered by us 💕</p>
 
-    <div class="swiper-container-wrapper">
-      <div class="swiper mySwiper1" data-aos="fade-up" data-aos-delay="200">
-        <div class="swiper-wrapper">
-          @foreach (['7427','8047','7397','7221','7917','9320','9546','7652'] as $img)
-          <div class="swiper-slide">
-            <img src="{{ asset('asset/images/IMG_'.$img.(in_array($img, ['7917','9320','9546','7652']) ? '.jpg' : '.JPG')) }}" alt="Client" />
-            <p>
-              @switch($img)
-                @case('7427') "Nail art-nya cantik banget dan hasilnya awet! Staff-nya juga ramah dan detail." @break
-                @case('8047') "Sudah beberapa kali ke sini, hasilnya selalu memuaskan dan awet." @break
-                @case('7397') "Tempatnya nyaman, bersih, dan staff-nya profesional semua!" @break
-                @case('7221') "Suka banget sama desain kuku di sini, selalu up to date dan elegan." @break
-                @case('7917') "Booking-nya gampang, pengerjaan cepat tapi tetap rapi!" @break
-                @case('9320') "Kuku jadi kelihatan lebih sehat dan cantik, recommended banget!" @break
-                @case('9546') "Pertama kali coba langsung jatuh cinta, pasti balik lagi!" @break
-                @case('7652') "Harga sesuai dengan kualitas, worth every rupiah!" @break
-              @endswitch
-            </p>
-            <h4>
-              @switch($img)
-                @case('7427') - Evanda @break
-                @case('8047') - Cindy @break
-                @case('7397') - Caca @break
-                @case('7221') - Nisa @break
-                @case('7917') - Tantri @break
-                @case('9320') - Jihan @break
-                @case('9546') - Intan @break
-                @case('7652') - Pratiwi @break
-              @endswitch
-            </h4>
-          </div>
-          @endforeach
-        </div>
-      </div>
+    <!-- Form Testimoni -->
+    <form action="{{ route('testimonials.store') }}" method="POST" data-aos="fade-up" data-aos-delay="200">
+      @csrf
+      <input type="text" name="name" placeholder="Nama Anda" required>
+      <textarea name="message" rows="4" placeholder="Tulis testimonial Anda..." required>{{ old('message') }}</textarea>
+      <button type="submit">Kirim Testimoni</button>
+    </form>
 
-      <div class="swiper mySwiper2" data-aos="fade-up" data-aos-delay="400">
-        <div class="swiper-wrapper">
-          @foreach (['7427','8047','7397','7221','7917','9320','9546','7652'] as $img)
-          <div class="swiper-slide">
-            <img src="{{ asset('asset/images/IMG_'.$img.(in_array($img, ['7917','9320','9546','7652']) ? '.jpg' : '.JPG')) }}" alt="Client" />
-            <p>
-              @switch($img)
-                @case('7427') "Nail art-nya cantik banget dan hasilnya awet! Staff-nya juga ramah dan detail." @break
-                @case('8047') "Sudah beberapa kali ke sini, hasilnya selalu memuaskan dan awet." @break
-                @case('7397') "Tempatnya nyaman, bersih, dan staff-nya profesional semua!" @break
-                @case('7221') "Suka banget sama desain kuku di sini, selalu up to date dan elegan." @break
-                @case('7917') "Booking-nya gampang, pengerjaan cepat tapi tetap rapi!" @break
-                @case('9320') "Kuku jadi kelihatan lebih sehat dan cantik, recommended banget!" @break
-                @case('9546') "Pertama kali coba langsung jatuh cinta, pasti balik lagi!" @break
-                @case('7652') "Harga sesuai dengan kualitas, worth every rupiah!" @break
-              @endswitch
-            </p>
-            <h4>
-              @switch($img)
-                @case('7427') - Evanda @break
-                @case('8047') - Cindy @break
-                @case('7397') - Caca @break
-                @case('7221') - Nisa @break
-                @case('7917') - Tantri @break
-                @case('9320') - Jihan @break
-                @case('9546') - Intan @break
-                @case('7652') - Pratiwi @break
-              @endswitch
-            </h4>
-          </div>
-          @endforeach
+    <!-- Testimoni dari Database -->
+    <div class="swiper mySwiper1" data-aos="fade-up" data-aos-delay="300">
+      <div class="swiper-wrapper">
+        @foreach ($testimonials as $testimonial)
+        <div class="swiper-slide">
+          <img src="{{ asset('asset/images/default-client.jpg') }}" alt="Client">
+          <p>"{{ $testimonial->message }}"</p>
+          <h4>- {{ $testimonial->name }}</h4>
         </div>
+        @endforeach
       </div>
     </div>
 
-    <div class="instagram" data-aos="fade-up" data-aos-delay="600">
+    <!-- Instagram -->
+    <div class="instagram" data-aos="fade-up" data-aos-delay="500">
       <p>Follow us on Instagram 👉 <a href="https://www.instagram.com/bycosmicnails" target="_blank">@bycosmicnails</a></p>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; Created with ♡ by Cosmic Nails. All rights reserved.</p>
   </footer>
 
+  <!-- Notifikasi Popup -->
+  @if (session('success'))
+  <div class="popup" id="popup">
+    <p>{{ session('success') }}</p>
+    <button onclick="document.getElementById('popup').style.display='none'">Oke</button>
+  </div>
+  <script>
+    window.onload = function() {
+      document.getElementById('popup').style.display = 'block';
+    };
+  </script>
+  @endif
+
+  <!-- JS Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="{{ asset('asset/js/testimonial.js') }}"></script>
+  <script>
+    AOS.init();
+    new Swiper('.mySwiper1', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: { delay: 4000 },
+    });
+  </script>
 </body>
 </html>

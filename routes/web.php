@@ -14,6 +14,14 @@ Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
 
-Route::view('/blog', 'blog')->name('blog');
-Route::view('/testimonial', 'testimonial')->name('testimonial');
-Route::view('/aboutus', 'aboutus')->name('aboutus');
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+
+Route::get('/testimonial', function () {
+    return view('testimonial');
+})->name('testimonial');
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
