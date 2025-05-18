@@ -31,7 +31,7 @@
                 <div class="overlay">
                     <h3>Red Nails</h3>
                     <p>Basic Red Design</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}"class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="100">
@@ -39,7 +39,7 @@
                 <div class="overlay">
                     <h3>Glitter Nail Art</h3>
                     <p>Shiny & Bold</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
@@ -47,7 +47,7 @@
                 <div class="overlay">
                     <h3>French Tip Design</h3>
                     <p>Classic Elegance</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="300">
@@ -55,7 +55,7 @@
                 <div class="overlay">
                     <h3>Intricate Nail Art</h3>
                     <p>Artistic Style</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="400">
@@ -63,7 +63,7 @@
                 <div class="overlay">
                     <h3>Ombre Design</h3>
                     <p>Soft Gradient</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="500">
@@ -71,7 +71,7 @@
                 <div class="overlay">
                     <h3>Cat Eye Nail Art</h3>
                     <p>Mesmerizing Shine</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="500">
@@ -79,7 +79,7 @@
                 <div class="overlay">
                     <h3>Cat Eye Nail Art</h3>
                     <p>Mesmerizing Shine</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="500">
@@ -87,7 +87,7 @@
                 <div class="overlay">
                     <h3>Cat Eye Nail Art</h3>
                     <p>Mesmerizing Shine</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="500">
@@ -95,7 +95,7 @@
                 <div class="overlay">
                     <h3>Cat Eye Nail Art</h3>
                     <p>Mesmerizing Shine</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="500">
@@ -103,7 +103,7 @@
                 <div class="overlay">
                     <h3>Cat Eye Nail Art</h3>
                     <p>Mesmerizing Shine</p>
-                    <a href="#" class="btn">View Details</a>
+                    <a href="{{ route('service') }}" class="btn">View Details</a>
                 </div>
             </div>
         </div>

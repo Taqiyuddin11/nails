@@ -52,21 +52,21 @@
         <img src="{{ asset('asset/images/red nails.jpg') }}" alt="">
         <div class="card-content">
           <p>Basic Color<br>Start from IDR 50K</p>
-          <a href="#" class="btn">See Details</a>
+          <a href="{{ route('service') }}" class="btn">See Details</a>
         </div>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="200">
         <img src="{{ asset('asset/images/glitter nails.jpg') }}" alt="">
         <div class="card-content">
           <p>Glitter Nails<br>Start from IDR 60K</p>
-          <a href="#" class="btn">See Details</a>
+          <a href="{{ route('service') }}" class="btn">See Details</a>
         </div>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="300">
         <img src="{{ asset('asset/images/french tips.jpg') }}" alt="">
         <div class="card-content">
           <p>French Tip<br>Start from IDR 70K</p>
-          <a href="#" class="btn">See Details</a>
+          <a href="{{ route('service') }}" class="btn">See Details</a>
         </div>
       </div>
     </div>
@@ -79,21 +79,21 @@
         <img src="{{ asset('asset/images/nail art.jpg') }}" alt="">
         <div class="card-content">
           <p>Nail Art<br>Start from IDR 60K</p>
-          <a href="#" class="btn">See Details</a>
+          <a href="{{ route('service') }}" class="btn">See Details</a>
         </div>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="200">
         <img src="{{ asset('asset/images/ombre nails.jpg') }}" alt="">
         <div class="card-content">
           <p>Ombre Nails<br>Start from IDR 70K</p>
-          <a href="#" class="btn">See Details</a>
+          <a href="{{ route('service') }}" class="btn">See Details</a>
         </div>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="300">
         <img src="{{ asset('asset/images/cat eye.jpg') }}" alt="">
         <div class="card-content">
           <p>Cat Eye Nails<br>Start from IDR 70K</p>
-          <a href="#" class="btn">See Details</a>
+          <a href="{{ route('service') }}" class="btn">See Details</a>
         </div>
       </div>
     </div>
