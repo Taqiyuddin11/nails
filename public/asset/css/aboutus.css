@@ -2,16 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     font-family: 'Playfair Display', serif;
     background-color: #fff7fa;
     color: #444;
     line-height: 1.6;
-  }
+}
 
-  nav {
+nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,87 +23,87 @@
     padding: 15px 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-  }
+}
 
-  nav .logo {
+nav .logo {
     color: #F37199;
     font-weight: bold;
     font-size: 1.5rem;
-  }
+}
 
-  nav ul {
+nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     text-decoration: none;
     color: #F37199;
     font-weight: 500;
     transition: all 0.3s ease;
-  }
+}
 
-  nav ul li a:hover {
+nav ul li a:hover {
     text-decoration: underline;
-  }
+}
 
-  nav .btn {
+nav .btn {
     background: #F37199;
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
     text-decoration: none;
-  }
+}
 
-  nav .btn:hover {
+nav .btn:hover {
     background-color: #AC1754;
-  }
+}
 
-  header {
+header {
     padding: 160px 20px 60px;
     text-align: center;
     background-color: #fff0f6;
-  }
+}
 
-  header h1 {
+header h1 {
     font-size: 3rem;
     color: #F37199;
-  }
+}
 
-  .container {
+.container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-  }
+}
 
-  .about-section, .goals-section {
+.about-section, .goals-section {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     align-items: center;
     margin-bottom: 60px;
-  }
+}
 
-  .about-section img, .goals-section img {
+.about-section img, .goals-section img {
     flex: 1 1 350px;
     max-width: 100%;
     max-height: 350px;
     object-fit: cover;
     border-radius: 12px;
-  }
-  
-  .about-text, .goals-text {
+}
+ 
+.about-text, .goals-text {
     flex: 1 1 500px;
-  }
+}
 
-  .about-text h2, .goals-text h2 {
+.about-text h2, .goals-text h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #F37199;
-  }
+}
 
-  .stats {
+.stats {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -111,43 +111,313 @@
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 60px;
-  }
+}
 
-  .stat-box {
+.stat-box {
     flex: 1 1 200px;
     text-align: center;
     margin: 10px 0;
-  }
+}
 
-  .stat-box h3 {
+.stat-box h3 {
     font-size: 2rem;
     color: #AC1754;
-  }
+}
 
-  .stat-box p {
+.stat-box p {
     font-size: 1rem;
     color: #555;
-  }
+}
 
-  .goals-text ul {
+.goals-text ul {
     padding-left: 20px;
-  }
+}
 
-  .goals-text ul li {
+.goals-text ul li {
     margin-bottom: 10px;
-  }
+}
 
-  footer {
+footer {
     text-align: center;
     padding: 30px 10px;
     background-color: #f5f5f5;
     font-size: 0.9rem;
     color: #999;
-  }
+}
 
-  @media (max-width: 768px) {
-    .about-section,
-    .goals-section {
-      flex-direction: column;
+.mobile-only-btn {
+    display: none !important;
+}
+
+.desktop-tablet-only-btn {
+    display: block !important;
+}
+
+#menu-toggle,
+#close-btn {
+    display: none;
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Tambahkan di sini agar tidak memengaruhi desktop */
     }
-  }
+
+    /* NAVBAR */
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* Menu toggle kiri, Logo tengah, Ruang kosong/tombol kanan */
+        align-items: center;
+        padding: 10px 10px;
+    }
+    
+    nav .logo {
+        grid-column: 2; /* Pusatkan logo */
+        text-align: center;
+        font-size: 1.1rem;
+        white-space: nowrap; /* Mencegah logo melompat baris */
+    }
+
+    #menu-toggle { /* Tampilkan menu toggle */
+        display: block;
+        grid-column: 3; /* Posisikan di kolom kiri */
+        justify-self: start; /* Rata kiri */
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        color: #F37199;
+    }
+
+    /* Sembunyikan tombol 'Book Now' yang di luar UL di mobile */
+    .desktop-tablet-only-btn {
+        display: none !important;
+    }
+
+    /* Tampilkan tombol 'Book Now' yang di dalam UL di mobile */
+    .mobile-only-btn {
+        display: block !important; /* Tampilkan di mobile */
+        margin-top: 20px; /* Jarak dari item menu lain */
+        text-align: center; /* Pusatkan tombol di dalam li */
+    }
+    
+    .mobile-only-btn .btn { /* Styling khusus untuk tombol di dalam menu mobile */
+        width: 80%; /* Atur lebar tombol agar tidak terlalu lebar */
+        margin: 0 auto; /* Pusatkan tombol */
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    /* Ini adalah menu slide-out mobile */
+    nav ul#nav-links { /* Target UL dengan ID untuk spesifikasi */
+        flex-direction: column; /* Item LI kembali vertikal */
+        position: fixed;
+        top: 0;
+        right: -250px; /* Sembunyikan di luar layar */
+        height: 100%;
+        width: 250px;
+        background-color: #fff;
+        padding-top: 60px; /* Untuk memberi ruang pada close-btn di atas */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: right 0.3s ease-in-out; /* Transisi untuk slide-out */
+        margin: 0; /* Hapus margin default */
+        padding-left: 0; /* Hapus padding default */
+    }
+
+    nav ul#nav-links.active { /* Pastikan kelas 'active' ditambahkan oleh JS Anda */
+        right: 0; /* Geser masuk */
+    }
+
+    nav ul#nav-links li {
+        padding: 15px 20px;
+    }
+
+    nav ul#nav-links li a {
+        display: block;
+        color: #F37199;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    /* Close button untuk menu mobile */
+    #close-btn {
+        display: block;
+        position: absolute; /* Posisikan secara absolut di dalam nav ul#nav-links */
+        top: 20px;
+        right: 220px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #F37199;
+        z-index: 1001; /* Pastikan di atas konten menu */
+    }
+
+    header {
+        padding: 100px 15px 40px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .about-section, .goals-section {
+        flex-direction: column; /* Tumpuk elemen */
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .about-section img, .goals-section img {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .about-text, .goals-text {
+        width: 100%; /* Ambil lebar penuh */
+    }
+
+    .about-text h2, .goals-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .stats {
+        flex-direction: column; /* Tumpuk stat box */
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .stat-box {
+        margin: 5px 0;
+    }
+
+    .stat-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-box p {
+        font-size: 0.9rem;
+    }
+
+    .goals-text ul {
+        padding-left: 0;
+        list-style-position: inside; /* Untuk pusatkan bullet point */
+    }
+
+    footer {
+        margin-top: 40px;
+    }
+}
+
+/* Tablet (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* HIDE MOBILE ELEMENTS */
+    #menu-toggle,
+    #close-btn,
+    .mobile-only-btn {
+        display: none !important;
+    }
+
+    /* NAV BAR FOR TABLET */
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+    }
+
+    nav .logo {
+        font-size: 1.5rem;
+        white-space: nowrap;
+    }
+
+    nav ul { /* Mengatur ulang UL agar tidak seperti mobile */
+        display: flex !important;
+        flex-direction: row !important;
+        position: static !important;
+        height: auto !important;
+        width: auto !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        transition: none !important;
+        right: auto !important;
+        padding-top: 0 !important;
+    }
+
+    nav ul li {
+        padding: 0 !important;
+    }
+
+    .desktop-tablet-only-btn {
+        display: block !important;
+        padding: 8px 15px;
+        margin-top: 0;
+    }
+
+    /* MAIN CONTENT ADJUSTMENTS FOR TABLET */
+    header {
+        padding: 120px 20px 50px;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .about-section, .goals-section {
+        flex-wrap: wrap; /* Pastikan wrap agar bisa menumpuk jika layar sangat sempit */
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .about-section img, .goals-section img {
+        flex: 1 1 300px; /* Fleksibilitas ukuran gambar */
+        max-height: 300px;
+    }
+
+    .about-text, .goals-text {
+        flex: 1 1 400px; /* Fleksibilitas ukuran teks */
+    }
+
+    .about-text h2, .goals-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .stats {
+        padding: 25px;
+        margin-bottom: 50px;
+    }
+
+    .stat-box {
+        flex: 1 1 150px; /* Lebih kecil untuk 4 kolom */
+        margin: 8px 0;
+    }
+
+    .stat-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-box p {
+        font-size: 0.95rem;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #menu-toggle,
+    #close-btn,
+    .mobile-only-btn {
+        display: none !important;
+    }
+
+}

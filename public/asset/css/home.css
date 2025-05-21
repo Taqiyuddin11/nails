@@ -1,270 +1,85 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam lebar/tinggi elemen */
+}
 
-  body {
-    font-family: 'Playfair Display', serif;
-    line-height: 1.6;
-  }
+body {
+    font-family: 'Playfair Display', serif; /* Font utama untuk seluruh halaman */
+    line-height: 1.6; /* Tinggi baris untuk keterbacaan */
+    background-color: #fff7fa; /* Warna latar belakang umum halaman */
+    color: #444; /* Warna teks default */
 
-  nav {
-    position: fixed;
+    /* Flexbox untuk Sticky Footer: Menjaga footer selalu di bagian bawah */
+    display: flex; /* Mengubah body menjadi flex container */
+    flex-direction: column; /* Mengatur item flex agar tersusun secara vertikal */
+    min-height: 100vh; /* Memastikan body minimal setinggi viewport */
+}
+
+nav {
+    position: fixed; /* Membuat navbar tetap di posisi saat scroll */
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
+    background: #fff; /* Latar belakang putih untuk navbar */
+    display: flex; /* Menggunakan flexbox untuk layout item di dalam navbar */
+    justify-content: space-between; /* Menyebar item dengan jarak yang sama di antara mereka */
+    align-items: center; /* Memposisikan item secara vertikal di tengah */
+    padding: 15px 30px; /* Padding atas/bawah 15px, kiri/kanan 30px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan tipis di bawah navbar */
+    z-index: 1000; /* Memastikan navbar berada di atas elemen lain */
+    flex-wrap: wrap; /* Memungkinkan item nav untuk wrap ke baris berikutnya di layar kecil */
+}
 
-  nav .logo {
-    color: #F37199;
+nav .logo {
+    color: #F37199; /* Warna teks logo */
     font-weight: bold;
     font-size: 1.5rem;
-  }
+}
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
+nav ul {
+    list-style: none; /* Menghilangkan bullet point dari daftar */
+    display: flex; /* Default: flex (horizontal) untuk item menu di desktop */
+    gap: 20px; /* Jarak antar item menu */
+    /* Properti flex untuk UL agar tidak mengambil terlalu banyak ruang */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
 
-  nav ul li a {
-    text-decoration: none;
+nav ul li a {
+    text-decoration: none; /* Menghilangkan underline dari link */
     color: #F37199;
     font-weight: 500;
-    transition: all 0.3s ease;
-  }
+    transition: all 0.3s ease; /* Transisi halus untuk efek hover */
+}
 
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
+nav ul li a:hover {
+    text-decoration: underline; /* Munculkan underline saat hover */
+}
 
-  nav .btn {
-    background: #F37199;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-  }
+.btn {
+    background: #F37199; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+    padding: 8px 15px; /* Padding dalam tombol */
+    border-radius: 5px; /* Sudut membulat */
+    text-decoration: none; /* Menghilangkan underline */
+    font-weight: 500;
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+    display: inline-block; /* Memungkinkan padding dan margin vertikal */
+}
 
-  nav .btn:hover {
-    background-color: #AC1754;
-  }
+.btn:hover {
+    background-color: #AC1754; /* Warna latar belakang saat hover */
+}
 
-  header,
-  section,
-  footer {
-    padding: 40px 20px;
-  }
+nav > .desktop-tablet-only-btn.btn {
+    margin-left: 20px; /* Memberi jarak dari item menu navigasi */
+    display: block; /* Defaultnya tampil di desktop/tablet */
+}
 
-  header {
-    background: url(public/asset/images/header.png) no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-top: 120px;
-  }
-
-  header h1 {
-    font-size: 3rem;
-  }
-
-  header p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-
-  header .description {
-    margin-top: 20px;
-    max-width: 600px;
-    font-size: 1.1rem;
-  }
-
-  header .btn {
-    margin-top: 30px;
-    background: #fff;
-    color: #000;
-    font-weight: bold;
-  }
-
-  .section-title {
-    color: #F37199;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .section-title p {
-    color: #FFCFCF;
-  }
-
-  .service-cards,
-  .art-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 240px;
-    text-align: center;
-    background-color: #fff;
-    padding: 10px;
-  }
-
-  .card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .card-content {
-    padding: 20px 10px;
-  }
-
-  .btn {
-    background: #F37199;
-    color: #fff;
-    padding: 10px 20px;
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-  .btn:hover {
-    background-color: #AC1754;
-  }
-
-  .btn-brown {
-    background: black;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-  }
-
-  .beauty-images {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 50%;
-    position: relative;
-  }
-
-  .card-description {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    background-color: rgba(140, 107, 79, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    max-width: 250px;
-  }
-
-  .card-description h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.2rem;
-  }
-
-  .card-description a {
-    color: white;
-    text-decoration: underline;
-    font-weight: bold;
-  }
-
-  footer {
-    background: #f5f5f5;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  .studio-stats {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 30px;
-  }
-
-  .studio-stats h3 {
-    font-size: 5rem;
-    color: #F37199;
-    font-style: oblique;
-    margin: 0;
-  }
-
-  .studio-stats p {
-    color: #999;
-    margin-top: 5px;
-  }
-
-  .branch-locations {
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .location-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .location-card {
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    overflow: hidden;
-    max-width: 350px;
-    flex: 1 1 300px;
-    height: 200px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .location-card .overlay {
-    background-color: rgba(243, 113, 152, 0.178);
-    /* Pink overlay */
-    color: white;
-    padding: 20px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .location-card h2 {
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-  }
-
-  .location-card p {
-    margin-bottom: 15px;
-    font-size: 1rem;
-  }
-
-  .btn-location {
+/* Styling untuk tombol lokasi (misalnya di kartu lokasi) */
+.btn-location {
     background: white;
     color: #F37199;
     padding: 8px 15px;
@@ -272,9 +87,429 @@
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease;
-  }
+}
 
-  .btn-location:hover {
+.btn-location:hover {
     background: #AC1754;
     color: white;
+}
+
+.menu-toggle { /* Tampilkan menu toggle (hamburger icon) */
+    display: block;
+    grid-column: 1; /* Posisikan di kolom kanan */
+    justify-self: end; /* Rata kanan */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    color: #F37199;
   }
+
+.close-btn {
+    display: none; /* Sembunyikan secara default di desktop/tablet */
+}
+
+header {
+    background: url('public/asset/images/header.png') no-repeat center center/cover; /* Gambar latar belakang header */
+    color: white; /* Warna teks di header */
+    text-align: center;
+    height: 80vh; /* Tinggi header 80% dari tinggi viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Memposisikan konten secara vertikal di tengah */
+    align-items: center; /* Memposisikan konten secara horizontal di tengah */
+    padding: 0 20px; /* Padding samping */
+    padding-top: 120px; /* Padding atas untuk memberi ruang pada fixed navbar */
+    flex-grow: 1; /* Penting: Membuat header tumbuh dan mendorong footer ke bawah */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px; /* Jarak antara judul dan paragraf */
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+header .description {
+    margin-top: 20px;
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.8; /* Menambah tinggi baris untuk deskripsi */
+}
+
+/* Tombol di Header */
+header .btn {
+    margin-top: 30px;
+    background: #fff; /* Warna tombol yang berbeda di header */
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.section-title {
+    color: #F37199;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-top: 40px; /* Jarak dari section sebelumnya */
+}
+
+.service-cards,
+.art-cards,
+.location-row {
+    display: flex;
+    flex-wrap: wrap; /* Memungkinkan kartu untuk wrap ke baris baru */
+    justify-content: center; /* Memposisikan kartu di tengah */
+    gap: 20px; /* Jarak antar kartu */
+    padding: 20px; /* Padding di sekitar container kartu */
+    max-width: 1200px; /* Lebar maksimum container */
+    margin: 0 auto; /* Pusatkan container */
+}
+
+.card {
+    border: 1px solid #ddd; /* Border tipis */
+    border-radius: 10px;
+    overflow: hidden; /* Memastikan gambar tidak keluar dari radius */
+    width: 240px; /* Lebar tetap untuk kartu */
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+    transition: transform 0.2s ease; /* Efek hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Sedikit naik saat hover */
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: 20px 10px;
+}
+
+.studio-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Jarak antar stat box */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 40px 20px; /* Padding di sekitar section */
+    background-color: #f8bbd0; /* Warna latar belakang untuk bagian statistik */
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: 40px auto; /* Pusatkan dan beri margin atas/bawah */
+}
+
+.studio-stats h3 {
+    font-size: 5rem;
+    color: #F37199;
+    font-style: oblique;
+    margin: 0;
+    line-height: 1;
+}
+
+.studio-stats p {
+    color: #999;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.branch-locations {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.location-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 350px;
+    flex: 1 1 300px; /* Fleksibel dengan ukuran dasar 300px */
+    height: 200px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-card .overlay {
+    background-color: rgba(243, 113, 152, 0.178); /* Overlay transparan */
+    color: white;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Sedikit bayangan pada teks overlay */
+}
+
+footer {
+    background: #f5f5f5;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 40px 20px;
+    color: #999;
+    flex-shrink: 0; /*  Mencegah footer menyusut saat konten utama pendek */
+    margin-top: auto; /* Memastikan footer didorong ke bawah jika konten kurang */
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Mencegah scroll horizontal saat menu aktif */
+    }
+
+    body.shifted { /* Kelas yang ditambahkan oleh JavaScript untuk efek geser konten */
+        transform: translateX(-80px); /* Geser konten utama ke kiri */
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden; /* Mencegah scroll saat body digeser */
+    }
+
+    /* Navbar di Mobile: Menggunakan Grid untuk layout elemen utama */
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* Kolom 1: hamburger, Kolom 2: logo, Kolom 3: kosong (atau tombol) */
+        align-items: center;
+        padding: 10px 15px; /* Padding lebih kecil untuk mobile */
+    }
+
+    nav .logo {
+        font-size: 1.1rem;
+        grid-column: 2; /* Posisikan logo di kolom tengah */
+        text-align: center;
+        white-space: nowrap; /* Mencegah logo melompat baris */
+    }
+
+    .menu-toggle {
+        display: block; /* Tampilkan ikon hamburger di mobile */
+        grid-column: 3; /* Posisikan di kolom pertama */
+        justify-self: start; /* Rata kiri */
+        font-size: 24px;
+        margin-right: 0; /* Reset margin default */
+    }
+
+    /* Sembunyikan tombol "Book Now" yang terpisah (desktop-tablet-only-btn) di mobile */
+    nav > .desktop-tablet-only-btn.btn {
+        display: none !important; /* Gunakan !important untuk menimpa aturan lain */
+    }
+
+    /* Tampilkan tombol "Book Now" yang ada di dalam menu mobile (mobile-only-btn) */
+    .mobile-only-btn {
+        display: block !important; /* Gunakan !important untuk menimpa aturan lain */
+        margin-top: 20px; /* Jarak dari item menu lainnya */
+        text-align: center; /* Pusatkan tombol di dalam li */
+    }
+    
+    /* Styling khusus untuk tombol .btn di dalam menu mobile (li .btn) */
+    nav ul li .btn { 
+        width: 80%; /* Atur lebar tombol agar tidak terlalu lebar */
+        margin: 0 auto; /* Pusatkan tombol */
+        padding: 10px 15px;
+        font-size: 1rem;
+        display: block; /* Pastikan tombol sebagai blok di dalam li */
+        box-shadow: none; /* Hapus bayangan di dalam menu slide-out */
+    }
+
+    
+    nav ul {
+        flex-direction: column; 
+        position: fixed; /* Membuat menu tetap di posisi saat scroll */
+        top: 0;
+        right: -250px; /* Sembunyikan menu di luar layar ke kanan */
+        height: 100%; /* Menu setinggi viewport */
+        width: 250px; /* Lebar menu */
+        background-color: #fff;
+        padding-top: 60px; /* Memberi ruang untuk close-btn di atas */
+        transition: right 0.3s ease-in-out; /* Animasi saat menu masuk/keluar */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Bayangan di sisi kiri menu */
+        z-index: 1000;
+        margin: 0; /* Hapus margin default */
+        padding-left: 0; /* Hapus padding default */
+    }
+
+    nav ul.active {
+        right: 0; /* Geser menu masuk ke dalam viewport saat kelas 'active' ditambahkan */
+    }
+
+    nav ul li {
+        padding: 15px 20px; /* Padding untuk setiap item menu */
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    /* Close Button di Menu Mobile */
+    .close-btn {
+        display: block; /* Tampilkan tombol close */
+        position: absolute; /* Posisikan secara absolut di dalam nav-links (UL) */
+        top: 20px;
+        right: 220px; /* Posisi di dalam menu slide-out */
+        font-size: 28px;
+        cursor: pointer;
+        color: #F37199;
+        z-index: 1001; /* Pastikan di atas konten menu */
+    }
+
+    /* Header di Mobile */
+    header {
+        background-size: cover;
+        background-position: top center; /* Sesuaikan posisi gambar di mobile */
+        height: 60vh; /* Mengurangi tinggi header di mobile */
+        padding-top: 80px; /* Sesuaikan padding atas karena navbar lebih kecil */
+        font-size: 0.9rem; /* Mengurangi ukuran font keseluruhan di header */
+    }
+
+    header h1 {
+        font-size: 2.2rem; /* Mengurangi ukuran font judul di header */
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    header .description {
+        font-size: 0.9rem;
+    }
+
+    /* Section Titles di Mobile */
+    .section-title {
+        font-size: 1.8rem;
+        padding-top: 20px; /* Mengurangi padding atas */
+    }
+
+    /* Card Containers di Mobile */
+    .service-cards,
+    .art-cards,
+    .location-row {
+        gap: 15px; /* Mengurangi jarak antar kartu */
+        padding: 15px; /* Mengurangi padding container */
+    }
+
+    .card {
+        width: 100%; /* Kartu mengambil lebar penuh di mobile */
+        max-width: 300px; /* Batasi lebar maksimum kartu */
+    }
+
+    /* Studio Stats di Mobile */
+    .studio-stats {
+        flex-direction: column; /* Tumpuk stat box secara vertikal */
+        gap: 20px;
+        padding: 20px;
+        margin: 20px auto; /* Mengurangi margin */
+    }
+
+    .studio-stats h3 {
+        font-size: 4rem;
+    }
+    .studio-stats p {
+        font-size: 1rem;
+    }
+
+    /* Branch Locations di Mobile */
+    .location-card {
+        flex: 1 1 100%; /* Setiap kartu lokasi mengambil lebar penuh */
+        max-width: 300px; /* Batasi lebar maksimum */
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle,
+    .mobile-only-btn,
+    .close-btn,
+    .menu-header { /* Jika Anda memiliki elemen menu-header */
+        display: none !important;
+    }
+
+    nav > .desktop-tablet-only-btn.btn {
+        display: block !important;
+    }
+
+    nav ul.nav-links {
+        display: flex; /* Kembali ke flexbox horizontal */
+        flex-direction: row; /* Kembali ke baris */
+        position: static; /* Hilangkan fixed position */
+        height: auto; /* Hilangkan tinggi tetap */
+        width: auto; /* Hilangkan lebar tetap */
+        background-color: transparent; /* Hilangkan latar belakang */
+        box-shadow: none; /* Hilangkan bayangan */
+        transition: none; /* Hilangkan transisi */
+        z-index: auto; /* Reset z-index */
+        margin: 0; /* Reset margin */
+        padding: 0; /* Reset padding */
+    }
+
+    nav ul li {
+        padding: 0; /* Reset padding item menu */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navbar di Tablet */
+    nav {
+        padding: 15px 20px; /* Sedikit mengurangi padding */
+    }
+    nav .logo {
+        font-size: 1.3rem;
+    }
+    nav ul {
+        gap: 15px; /* Mengurangi jarak antar item menu */
+    }
+    nav ul li a {
+        font-size: 0.95rem;
+    }
+    /* Pastikan tombol "Book Now" yang terpisah terlihat di tablet */
+    nav > .desktop-tablet-only-btn.btn {
+        display: block !important;
+        padding: 7px 12px; /* Sesuaikan ukuran tombol */
+        font-size: 0.9rem;
+    }
+
+    /* Header di Tablet */
+    header {
+        height: 70vh; /* Sedikit lebih kecil dari desktop */
+        padding-top: 100px; /* Sesuaikan padding atas */
+    }
+    header h1 {
+        font-size: 2.8rem;
+    }
+    header p {
+        font-size: 1.4rem;
+    }
+
+    /* Card Containers di Tablet */
+    .service-cards,
+    .art-cards,
+    .location-row {
+        gap: 20px;
+        justify-content: space-around; /* Lebih merata */
+    }
+    .card {
+        width: 220px; /* Sedikit lebih kecil dari desktop */
+    }
+
+    /* Studio Stats di Tablet */
+    .studio-stats {
+        gap: 40px;
+        padding: 30px;
+    }
+    .studio-stats h3 {
+        font-size: 4.5rem;
+    }
+
+    /* Branch Locations di Tablet */
+    .location-card {
+        flex: 1 1 45%; /* Dua kartu per baris */
+        max-width: 320px;
+    }
+}

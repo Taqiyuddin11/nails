@@ -10,18 +10,24 @@
 </head>
 <body>
     <nav>
-        <div class="logo">By Cosmic Nails</div>
-        <ul>
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="{{ route('service') }}">Service</a></li>
-            <li><a href="{{ route('gallery') }}">Gallery</a></li>
-            <li><a href="{{ route('blog') }}">Blog</a></li>
-            <li><a href="{{ route('testimonial') }}">Testimonial</a></li>
-            <li><a href="{{ route('aboutus') }}">About Us</a></li>
-        </ul>
-        <a href="https://api.whatsapp.com/send/?phone=6281234067022&text&type=phone_number&app_absent=0"
-            class="btn">Book Now</a>
-    </nav>
+    <div class="logo">By Cosmic Nails</div>
+    <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+    <ul id="nav-links" class="nav-links">
+        <span id="close-btn" class="close-btn">&times;</span>
+      <li><a href="{{ route('home') }}">Home</a></li>
+      <li><a href="{{ route('service') }}">Service</a></li>
+      <li><a href="{{ route('gallery') }}">Gallery</a></li>
+      <li><a href="{{ route('blog') }}">Blog</a></li>
+      <li><a href="{{ route('testimonial') }}">Testimonial</a></li>
+      <li><a href="{{ route('aboutus') }}">About Us</a></li>
+    
+      <li class="mobile-only-btn">
+        <a href="https://api.whatsapp.com/send/?phone=6281234067022&text&type=phone_number&app_absent=0" class="btn">Book Now</a>
+      </li>  
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=6281234067022&text&type=phone_number&app_absent=0" class="btn desktop-tablet-only-btn">Book Now</a>
+     
+  </nav>
 
     <section>
         <h2 class="gallery-title" data-aos="fade-up">Our Stunning Nail Art Collection</h2>

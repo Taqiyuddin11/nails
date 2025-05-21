@@ -1,195 +1,420 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Playfair Display', serif;
-  background: #fff7fa;
-  color: #444;
+    font-family: 'Playfair Display', serif;
+    background: #fff7fa;
+    color: #444;
 }
 
 nav {
-  position: fixed;
-  top: 0; left: 0; width: 100%;
-  background: #fff;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 15px 30px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 1000;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: #fff;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 nav .logo { color: #F37199; font-weight: bold; font-size: 1.5rem; }
 nav ul { list-style: none; display: flex; gap: 20px; }
 nav ul li a {
-  text-decoration: none; color: #F37199; font-weight: 500;
+    text-decoration: none; color: #F37199; font-weight: 500;
 }
 nav ul li a:hover { text-decoration: underline; }
 nav .btn {
-  background: #F37199; color: white;
-  padding: 8px 15px; border-radius: 5px; text-decoration: none;
+    background: #F37199; color: white;
+    padding: 8px 15px; border-radius: 5px; text-decoration: none;
 }
 nav .btn:hover { background-color: #AC1754; }
 
 main {
-  padding: 140px 20px 80px;
-  max-width: 1200px;
-  margin: auto;
+    padding: 140px 20px 80px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 h1 {
-  text-align: center;
-  color: #F37199;
-  margin-bottom: 10px;
-  font-size: 2.8rem;
+    text-align: center;
+    color: #F37199;
+    margin-bottom: 10px;
+    font-size: 2.8rem;
 }
 p.subtitle {
-  text-align: center;
-  color: #AC1754;
-  margin-bottom: 50px;
-  font-size: 1.2rem;
+    text-align: center;
+    color: #AC1754;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
 }
 
 .swiper {
-  width: 100%;
-  padding-bottom: 30px;
+    width: 100%;
+    padding-bottom: 30px;
 }
 .swiper-wrapper {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .swiper-slide {
-  background: linear-gradient(to bottom right, #fff0f5, #ffe3ed);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(243, 113, 153, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease;
-  width: 250px;
+    background: linear-gradient(to bottom right, #fff0f5, #ffe3ed);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(243, 113, 153, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    width: 250px;
 }
 .swiper-slide:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 .swiper-slide img {
-  width: 150px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 15px;
+    width: 150px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 .swiper-slide p {
-  font-style: italic;
-  color: #555;
-  text-align: center;
-  margin-bottom: 10px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .swiper-slide h4 {
-  color: #F37199;
-  font-size: 1rem;
-  text-align: center;
+    color: #F37199;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .instagram {
-  margin-top: 60px;
-  text-align: center;
+    margin-top: 60px;
+    text-align: center;
 }
 .instagram a {
-  color: #F37199;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-decoration: none;
+    color: #F37199;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
 }
 .instagram a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 30px 10px;
-  background-color: #f5f5f5;
-  color: #999;
-  margin-top: 60px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 30px 10px;
+    background-color: #f5f5f5;
+    color: #999;
+    margin-top: 60px;
 }
 
 .popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  border: 2px solid #F37199;
-  padding: 15px 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  z-index: 9999;
-  display: none;
-  text-align: center;
-  border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid #F37199;
+    padding: 15px 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: none;
+    text-align: center;
+    border-radius: 15px;
 }
 .popup button {
-  margin-top: 20px;
-  padding: 8px 20px;
-  background-color: #F37199;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background-color: #F37199;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 form textarea, form input {
-  width: 100%;
-  max-width: 600px;
-  margin: 10px auto;
-  display: block;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
 }
 form button {
-  display: block;
-  margin: 0 auto 70px;
-  background-color: #F37199;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 8px;
-  cursor: pointer;
+    display: block;
+    margin: 0 auto 70px;
+    background-color: #F37199;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 .testimonial-preview-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .testimonial-bg-item {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 10px 15px;
-  border-radius: 12px;
-  font-size: 14px;
-  animation: floatText 20s linear infinite;
-  white-space: nowrap;
-  max-width: 300px;
-  z-index: -1; 
-  opacity: 0;
-  animation-delay: calc(2s * var(--i)); 
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    animation: floatText 20s linear infinite;
+    white-space: nowrap;
+    max-width: 300px;
+    z-index: -1; 
+    opacity: 0;
+    animation-delay: calc(2s * var(--i)); 
 }
 
 @keyframes floatText {
-  0% {
-    transform: translateY(100vh) translateX(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120vh) translateX(calc(100px + (var(--i) * 50px)));
-    opacity: 0;
-  }
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(calc(100px + (var(--i) * 50px)));
+        opacity: 0;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Tambahkan di sini agar tidak memengaruhi desktop */
+    }
+
+    /* NAVBAR */
+    nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* Menu toggle kiri, Logo tengah, Ruang kosong/tombol kanan */
+        align-items: center;
+        padding: 10px 10px;
+    }
+    
+    nav .logo {
+        grid-column: 2; /* Pusatkan logo */
+        text-align: center;
+        font-size: 1.1rem;
+        white-space: nowrap; /* Mencegah logo melompat baris */
+    }
+
+    #menu-toggle { /* Tampilkan menu toggle */
+        display: block;
+        grid-column: 3; /* Posisikan di kolom kiri */
+        justify-self: start; /* Rata kiri */
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        color: #F37199;
+    }
+
+    /* Sembunyikan tombol 'Book Now' yang di luar UL di mobile */
+    .desktop-tablet-only-btn {
+        display: none !important;
+    }
+
+    /* Tampilkan tombol 'Book Now' yang di dalam UL di mobile */
+    .mobile-only-btn {
+        display: block !important; /* Tampilkan di mobile */
+        margin-top: 20px; /* Jarak dari item menu lain */
+        text-align: center; /* Pusatkan tombol di dalam li */
+    }
+    
+    .mobile-only-btn .btn { /* Styling khusus untuk tombol di dalam menu mobile */
+        width: 80%; /* Atur lebar tombol agar tidak terlalu lebar */
+        margin: 0 auto; /* Pusatkan tombol */
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    /* Ini adalah menu slide-out mobile */
+    nav ul#nav-links { /* Target UL dengan ID untuk spesifikasi */
+        flex-direction: column; /* Item LI kembali vertikal */
+        position: fixed;
+        top: 0;
+        right: -250px; /* Sembunyikan di luar layar */
+        height: 100%;
+        width: 250px;
+        background-color: #fff;
+        padding-top: 60px; /* Untuk memberi ruang pada close-btn di atas */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: right 0.3s ease-in-out; /* Transisi untuk slide-out */
+        margin: 0; /* Hapus margin default */
+        padding-left: 0; /* Hapus padding default */
+    }
+
+    nav ul#nav-links.active { /* Pastikan kelas 'active' ditambahkan oleh JS Anda */
+        right: 0; /* Geser masuk */
+    }
+
+    nav ul#nav-links li {
+        padding: 15px 20px;
+    }
+
+    nav ul#nav-links li a {
+        display: block;
+        color: #F37199;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    /* Close button untuk menu mobile */
+    #close-btn {
+        display: block;
+        position: absolute; /* Posisikan secara absolut di dalam nav ul#nav-links */
+        top: 20px;
+        right: 220px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #F37199;
+        z-index: 1001; /* Pastikan di atas konten menu */
+    }
+
+    
+    main {
+        padding: 100px 15px 40px; /* Sesuaikan padding agar tidak tertutup nav */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p.subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    form {
+        padding: 0 15px; /* Tambahkan padding ke form */
+    }
+
+    form textarea, form input {
+        max-width: 100%; /* Batasi lebar input/textarea di mobile */
+    }
+
+    .swiper-slide {
+        width: 80% !important; /* Buat slide lebih kecil agar bisa terlihat beberapa */
+        /* Atau atur width: 250px; */
+    }
+    .swiper-wrapper {
+        justify-content: center; /* Pusatkan slide di mobile */
+    }
+
+    .instagram {
+        margin-top: 40px;
+    }
+    .instagram p {
+        font-size: 0.9rem;
+    }
+    .instagram a {
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 40px;
+    }
+}
+
+/* Tablet (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* HIDE MOBILE ELEMENTS */
+    #menu-toggle, /* Sembunyikan hamburger menu */
+    #close-btn, /* Sembunyikan tombol close */
+    .mobile-only-btn { /* Sembunyikan tombol mobile-only di tablet */
+        display: none !important;
+    }
+
+    /* NAV BAR FOR TABLET */
+    nav { /* Memastikan nav flexbox normal */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+    }
+
+    nav .logo {
+        font-size: 1.5rem;
+        white-space: nowrap;
+    }
+
+    nav ul { /* Mengatur ulang UL agar tidak seperti mobile */
+        display: flex !important; /* Pastikan kembali ke flex */
+        flex-direction: row !important;
+        position: static !important;
+        height: auto !important;
+        width: auto !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        transition: none !important;
+        right: auto !important;
+        padding-top: 0 !important;
+    }
+
+    nav ul li { /* Reset padding yang mungkin diubah oleh mobile */
+        padding: 0 !important;
+    }
+
+    .desktop-tablet-only-btn { /* Pastikan tombol desktop/tablet terlihat */
+        display: block !important;
+        padding: 8px 15px;
+        margin-top: 0;
+    }
+
+    /* MAIN CONTENT ADJUSTMENTS FOR TABLET */
+    main {
+        padding: 120px 30px 60px; /* Sesuaikan padding */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p.subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+
+    form {
+        max-width: 700px; /* Beri batas lebih kecil dari desktop */
+        margin: 10px auto 70px;
+    }
+
+    .swiper-slide {
+        width: 300px !important; /* Sesuaikan lebar slide di tablet */
+    }
+
+    .instagram {
+        margin-top: 50px;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #menu-toggle,
+    #close-btn,
+    .mobile-only-btn { 
+        display: none !important;
+    }
 }
