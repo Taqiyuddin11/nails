@@ -92,7 +92,7 @@
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <img id="modalImg" src="" alt="Nail Design" />
+      <img id="modalImg" src="" alt="Nail Design">
       <h3 id="modalTitle"></h3>
       <p id="modalDesc"></p>
       <p><strong>Estimated Time:</strong> <span id="modalTime"></span></p>
